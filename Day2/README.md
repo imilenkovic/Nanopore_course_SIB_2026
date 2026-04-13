@@ -1,25 +1,120 @@
 
-#  Master of Pores – Day 2 Basecalling & Mapping
+#  Master of Pores – Day 2 Principles of single molecule resolution: polyA tail, isoform usage, per read modification
 
-First - check if you have nextflow installed.
+## basecall modifications with estimating the poly(A)-tail
+
+Navigate to the pre-processing directory:
+
+```bash
+cd ~/MOP4_copied/mop_preprocess
+```
+
+Edit the  `params.yaml` file:
 
 ```
-nextflow -version
+# Basecalling can be either NO, dorado, dorado-mod or dorado-duplex
+basecalling: "dorado-mod"
 ```
-If not, install it this way:
+
 ```
-cd ~
-wget https://github.com/nextflow-io/nextflow/releases/download/v25.04.0/nextflow
-chmod +x nextflow
-mkdir -p ~/bin
-mv nextflow ~/bin/
-echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
-source .bashrc
+dorado-mod: "hac,pseU --estimate-poly-a"
 ```
----
+
+```
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
+```
+
+Inspect the bam file:
+
+```
+samtools view pod5---bc_19_s.bam | less
+```
 
 
-##  Basecall your mouse pod5 files with Dorado 
+## analyze modifications through basecalling errors 
+
+Navigate to the pre-processing directory:
+
+```bash
+cd ~/MOP4_copied/mop_mod
+```
+
+Edit the  `params.yaml` file
+
+```
+input_path: "path_to_your_mop_preprocess_output"
+input_pod5: ""
+comparison: "${projectDir}/comparison.tsv"
+
+reference: "/home/ubuntu/Share/references/yeast_rRNA_ref.fa"
+output: "${projectDir}/name_of_your_output_folder"
+pars_tools: "${projectDir}/tools_opt.tsv"
+
+# flows for nanoconsensus
+epinano: "YES"
+# nanoRMA needs mop_preprocess to be run with dorado-mod mode
+nanoRMS: "NO"
+baseQ: "NO"
+f5c: "NO"
+
+# Other flows
+m6anet: "NO"
+modkit: "NO"
+
+#f5c kmer  model
+f5c_kmer_model: "${projectDir}/models/rna004.nucleotide.5mer.model"
+
+# epinano plots
+epinano_plots: "YES"
+email: ""
+
+# Program params (workflows / tools)
+progPars:
+  epinano:
+    epinano: ""
+  f5c:
+    f5c: "--rna"
+  baseQ:
+    baseQ: ""
+  nanoRMS:
+    nanoRMS: ""
+  m6Anet:
+    f5c: "--rna"
+    inference: "--pretrained_model HEK293T_RNA004"
+  modkit:
+    modkit: "--mod-threshold 21891:0.90 --edge-filter 500,500"
+    cov_filtering: ""
+    strand: ""
+    field_sel: "11"
+```
+Run the pipeline!
+
+```
+nextflow run mop_mod.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
+```
+
+
+
+Optional:
+
+Rerun mop_preprocess with the hac model, and then run mop_mod on that output. Let's 1) inspect and compare the bams, and 2) see how the epinano output is different
+
+
+```
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
+```
+
+
+## To compare two epinano output files
+
+```
+Rscript scatterplot_script.R file_1.csv file_2.csv output.pdf
+```
+
+
+
+
+## basecall modifications with modification-aware basecalling models 
 
 Navigate to the pre-processing directory:
 
@@ -29,99 +124,40 @@ cd ~/MOP4_copied/mop_preprocess
 
 Edit the  `params.yaml` file
 
-Data: Share/data/mouse/pod5/mouse_mRNA.pod5
-Reference: Share/references/chr19.fa
-Annotation: Share/references/gencode.vM38.annotation.gtf
-Ref_type : genome
-Counting: htseq
-
-Output: ./mouse_test_data
-
-seqtagger: "-k b04_RNA004"
-
-Run the pipeline!
-
-```bash
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > demultiplexing.log
+```
+Basecalling can be either NO, dorado, dorado-mod or dorado-duplex
+basecalling: "dorado-mod"
 ```
 
-##  Basecall your yeast pod5 files with Dorado 
-
-Navigate to the pre-processing directory:
-
-```bash
-cd ~/MOP4/mop_preprocess
 ```
-
-Edit the  `params.yaml` file
-
-Dataset 2: 
-pod5 files - rRNA from S. cerevisiae
-
-Share/data/yeast/pod5   -> choose one pod5 file from this folder
-
-Reference:
-S. cerevisiae rRNA sequence (you will find it in the Share/references folder)
-
-Ref_type : transcriptome
-Counting: nanocount
-
-
-seqtagger: "-k b96_RNA004"
-
-bc19 and bc20 - WT yeast (replicates)
+dorado-mod: "hac,pseU"
+```
 
 
 Run the pipeline!
 
 ```bash
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity --nv -profile local -bg > demultiplexing.log
+ nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
 ```
 
-##  Run the pipeline starting from fastq files
 
-Navigate to the pre-processing directory:
+
+
+
+
+
+
+
+## Extract modification frequency per position with Modkit
 
 ```bash
-cd ~/MOP4/mop_preprocess
+modkit pileup Share/data/mouse/output/dorado_m6A_drach/mouse_drach_trial/alignment/pod5---bc_1_s.bam modkit/CTR_m6A_pileup.bed --log-filepath modkit/CTR_m6A_pileup.log
 ```
 
-Edit the  `params.yaml` file
 
-- Remove the path to pod5 files, and only put a path to fastq files (you can use the fastq files generated in the output folder of one of your previous folders)
-
-- Explore the output (it should contain a folder called alignment in which you will find the bam files, and a folder called counts in which you will find the counts)
-
-## Explore the bam files with samtools 
-
-Some useful commands: 
+## Extract modification frequency per read with Modkit
 
 ```bash
-samtools view file.bam | wc –l 
-samtools view –F 4 file.bam | wc –l 
-samtools view –s 0.1 file.bam | wc –l
+modkit extract full Share/data/mouse/output/dorado_m6A_drach/mouse_drach_trial/alignment/pod5---bc_1_s.bam --num-reads 1000 test_modkit_full.txt
+``` 
 
-samtools view –H file.bam | less
-samtools view –h file.bam > file.sam
-
-samtools view –Sb file.sam > new_file.bam
-```
-
-## Predict isoform usage with Isoquant 
-
-For each bam file we can assign reads to knwon isoforms:
-
-```bash
-isoquant --reference ~/references/chr19.fa --genedb ~/references/chr19_annotation.gtf --complete_genedb --bam Share/data/mouse/output/dorado_fast/alignment/pod5---bc_1_s.bam --data_type nanopore -o isoquant_bc1
-```
-
-## Discover isoforms with Isoquant
-
-```bash 
-isoquant --reference ~/references/chr19.fa --fastq ~/Share/data/mouse/output/dorado_fast/fastq_files/pod5---bc_1.fq.gz --data_type nanopore -o isoquant_discovery_test
-```
-
-##  Documentation
-
-Full documentation:  
-[[https://biocorecrg.github.io/master_of_pores/](https://biocorecrg.github.io/master_of_pores/MOP4-dev/index.html)]

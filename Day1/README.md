@@ -4,6 +4,15 @@
 This guide walks through the first steps of exploring **Master of Pores** and inspecting example nanopore input data.
 
 
+
+Connect to the cluster by running:
+```
+ssh -i your_key.pem your_username@3.126.104.186
+```
+
+
+
+
 First - check if you have nextflow installed.
 
 ```
@@ -44,7 +53,7 @@ pod5 inspect summary mouse_mRNA.pod5
 ```
 
 
-##  Demultiplex your pod5 files with Seqtagger
+##  Hands-on I - basecalling with dorado and mapping with minimap2 in the MOP pipeline
 
 Navigate to the pre-processing directory:
 
@@ -57,14 +66,14 @@ Edit the  `params.yaml` file
 Run the pipeline!
 
 ```bash
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > demultiplexing.log
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > output.log
 ```
 
 
 If it fails? Resume!
 
 ```bash
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg -resume > demultiplexing2.log
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg -resume > output2.log
 ```
 
 If you need to kill it? (don’t restart if you haven’t killed the previous processes!)
@@ -77,10 +86,26 @@ cat .nextflow.pid
 kill 1234
 ```
 
+##  Hands-on II - running epinano on the MOP output
+
+```
+Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_file_name
+```
+
+
+
+
 ##  Documentation
 
 Full documentation:  
 [[https://biocorecrg.github.io/master_of_pores/](https://biocorecrg.github.io/master_of_pores/MOP4-dev/index.html)]
+
+
+
+
+
+
+
 
 
 

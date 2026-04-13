@@ -1,6 +1,25 @@
 
 #  Master of Pores – Day 2 Principles of single molecule resolution: polyA tail, isoform usage, per read modification
 
+
+
+## Predict isoform usage with Isoquant 
+
+For each bam file we can assign reads to knwon isoforms:
+
+```bash
+IsoQuant/isoquant.py --reference Share/references/chr19.fa --genedb Share/references/chr19_annotation.db --complete_genedb --bam Share/data/mouse/output/dorado_fast/alignment/pod5---bc_1_s.bam --data_type nanopore -o isoquant_bc1
+```
+
+## Discover isoforms with Isoquant
+
+```bash 
+isoquant.py --reference ~/Share/references/chr19.fa --fastq ~/Share/data/mouse/output/dorado_fast/fastq_files/pod5---bc_1.fq.gz --data_type nanopore -o isoquant_discovery_test
+```
+
+
+
+
 ## basecall modifications with estimating the poly(A)-tail
 
 Navigate to the pre-processing directory:

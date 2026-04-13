@@ -36,7 +36,7 @@ source .bashrc
 Navigate to the input directory:
 
 ```bash
-cd ~/Share/data/mouse/pod5
+cd ~/Share/data/yeast/pod5
 
 ```
 
@@ -49,11 +49,11 @@ List contents of a `.pod5` file:
 Count the total number of groups/datasets:
 
 ```bash
-pod5 inspect summary mouse_mRNA.pod5
+pod5 inspect summary subset_yeast.pod5
 ```
 
 
-##  Hands-on I - basecalling with dorado and mapping with minimap2 in the MOP pipeline
+##  Hands-on I - basecalling with dorado and mapping with minimap2 in the MOP pipeline (yeast rRNA)
 
 Navigate to the pre-processing directory:
 

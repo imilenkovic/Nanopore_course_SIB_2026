@@ -24,7 +24,7 @@ nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profi
 Inspect the bam file:
 
 ```
-samtools view pod5---bc_19_s.bam |  head -n 20 | cut -f 1,3,4,25,26
+samtools view pod5---bc_19_s.bam | less
 ```
 
 

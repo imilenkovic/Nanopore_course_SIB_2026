@@ -49,7 +49,7 @@ pod5 inspect summary mouse_mRNA.pod5
 Navigate to the pre-processing directory:
 
 ```bash
-cd ~/MOP4/mop_preprocess
+cd ~/master_of_pores/mop_preprocess
 ```
 
 Edit the  `params.yaml` file

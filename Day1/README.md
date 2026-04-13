@@ -95,15 +95,6 @@ Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_file_name
 
 
 
-##  Documentation
-
-Full documentation:  
-[[https://biocorecrg.github.io/master_of_pores/](https://biocorecrg.github.io/master_of_pores/MOP4-dev/index.html)]
-
-
-
-
-
 
 
 

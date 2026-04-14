@@ -122,10 +122,25 @@ Now, do the same with the KO file :)
 
 ##  Hands-on IV - Extract m6A information from the bam files with modkit
 
+Navigate to the alignment directory:
+
 ```bash
+cd ~/output_mop/mRNA_CTR_m6A/alignment
 ```
 
+# Extract modification frequency per position with Modkit
 
+```bash
+modkit pileup CTR_s.bam ../modkit/CTR_m6A_pileup.bed --log-filepath ../modkit/CTR_m6A_pileup.log
+```
+
+# Extract modification probability per position per read with Modkit
+
+```bash
+modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
+``` 
+
+Now, do the same with the KO file :) 
 
 ##  Basecall your yeast pod5 files with Dorado 
 

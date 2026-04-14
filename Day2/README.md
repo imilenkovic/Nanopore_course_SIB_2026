@@ -213,19 +213,30 @@ The run contains 12 barcodes.
 
 bc1 and bc2 are WT strains.
 
-bc3, bc4, bc6, and bc9 are KO strains lacking some rRNA modifications.
+bc3, bc7, and bc9 are KO strains lacking some rRNA modifications.
 
-Find which modifications are missing in each barcode.
+Find which modifications are missing in each of these KO strains.
 
 ## Assignment 2
 
 In ```/home/ubuntu/Share/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
 
-Use a modification-aware basecaller to predict pseU sites in 18S and 25S rRNA. Investigate how well the predictions match the ground truth (known modifications).
+Use a modification-aware basecaller to predict pseU sites in 18S and 25S rRNA. Investigate how well the predictions match the ground truth (known modifications). Use bc19 for the analysis.
 
 ## Assignment 3
 
+In ```/home/ubuntu/Share/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
+
+Bc19 is the WT sample. Find which modifications are missing in barcodes 13, 14 and 15.
+
+## Assignment 4
+
+In ```/home/ubuntu/Share/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
+
+Bc19 is the WT sample. Find which modifications are missing in barcodes 17, 21, 22 and 23.
+
+## Assignment 5
+
 Go back to ```/home/ubuntu/Share/data/bacteria/pod5```.
 
-Use a modification-aware basecaller to predict m5C sites. Investigate how well the predictions match the ground truth (known modifications).
-
+Use a modification-aware basecaller to predict m5C sites. Investigate how well the predictions match the ground truth (known modifications). Use bc1 for the analysis.

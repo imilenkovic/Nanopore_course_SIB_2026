@@ -91,7 +91,7 @@ kill 1234
 ##  Hands-on II - running epinano on the MOP output
 
 ```
-Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_file_name
+Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_folder_name
 ```
 
 

@@ -136,11 +136,6 @@ Extract modification frequency per position with Modkit
 modkit pileup CTR_s.bam ../modkit/CTR_m6A_pileup.bed --log-filepath ../modkit/CTR_m6A_pileup.log
 ```
 
-Extract modification probability per position per read with Modkit
-
-```bash
-modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
-``` 
 
 Now, do the same with the KO file :) 
 

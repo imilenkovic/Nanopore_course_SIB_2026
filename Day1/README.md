@@ -136,7 +136,6 @@ Extract modification frequency per position with Modkit
 modkit pileup CTR_s.bam ../modkit/CTR_m6A_pileup.bed --log-filepath ../modkit/CTR_m6A_pileup.log
 ```
 
-
 Now, do the same with the KO file :) 
 
 ##  Basecall your yeast pod5 files with Dorado 

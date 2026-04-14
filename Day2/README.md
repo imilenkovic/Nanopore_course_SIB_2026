@@ -1,8 +1,6 @@
 
 #  Day 2 - Principles of single molecule resolution: polyA tail, isoform usage, per read modification
 
-
-
 ## Hands-on V: Isoform analysis with Isoquant 
 
 Navigate to the alignment directory:
@@ -39,25 +37,28 @@ Now, do the same with the KO file :)
 
 ## Hands-on VI: poly(A)-tail estimation with Dorado
 
+
 Navigate to the pre-processing directory:
 
 ```bash
-cd master_of_pores/mop_preprocess
+cd ~/master_of_pores/mop_preprocess
 ```
 
-Edit the  `params.yaml` file:
+Edit the  `params.yaml` file
 
-```
-# Basecalling can be either NO, dorado, dorado-mod or dorado-duplex
-basecalling: "dorado-mod"
-```
-
-```
+```bash
+Data: ../../mouse/CTR/CTR.pod5
+Reference: ../../references/chr19.fa
+Annotation: ../../references/chr19_annotation.gtf
+Ref_type : genome
+Counting: htseq
+Output: ../../output_mop/mRNA_CTR_polyA
 dorado-mod: "hac,m6A_DRACH --estimate-poly-a"
 ```
+Run the pipeline!
 
-```
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
+```bash
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_mRNA_CTR_polyA.txt
 ```
 
 Navigate to the alignment directory:
@@ -65,10 +66,12 @@ Navigate to the alignment directory:
 ```bash
 cd ~/output_mop/mRNA_CTR_polyA/alignment
 ```
+
 Inspect the bam file:
 
 ```
-samtools view pod5_s.bam | awk '/pt:i:/ { for (i=1; i<=NF; i++) if ($i ~ /pt:i:/) matched=$i; print $1, $2, $3, $4, matched; }' | less
+samtools view CTR_s.bam | less 
+samtools view CTR_s.bam | awk '/pt:i:/ { for (i=1; i<=NF; i++) if ($i ~ /pt:i:/) matched=$i; print $1, $2, $3, $4, matched; }' | less
 ```
 
 ## Hands-on VII: per read modification information

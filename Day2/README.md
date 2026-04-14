@@ -23,10 +23,12 @@ or discover isoforms:
 isoquant --reference ~/references/chr19.fa --bam CTR_s.bam --data_type nanopore -o ../isoquant_discovery_CTR
 ```
 
-Explore the output folder: 
+Explore the output: 
 
 ```bash 
 ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT
+less ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT/OUT.read_assignments.tsv.gz
+
 ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_discovery_CTR/OUT
 ```
 

@@ -52,6 +52,8 @@ Count the total number of groups/datasets:
 pod5 inspect summary subset_yeast.pod5
 ```
 
+Now, do the same with the mouse data!
+
 
 ##  Hands-on I - basecalling with dorado and mapping with minimap2 in the MOP pipeline (yeast rRNA)
 

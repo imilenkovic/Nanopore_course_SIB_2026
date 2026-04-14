@@ -8,13 +8,13 @@
 For each bam file we can assign reads to knwon isoforms:
 
 ```bash
-IsoQuant/isoquant.py --reference Share/references/chr19.fa --genedb Share/references/chr19_annotation.db --complete_genedb --bam Share/data/mouse/output/dorado_fast/alignment/pod5---bc_1_s.bam --data_type nanopore -o isoquant_bc1
+isoquant --reference ~/references/chr19.fa --genedb ~/references/chr19_annotation.db --complete_genedb --bam ~/output_mop/mRNA/alignment/pod5_s.bam --data_type nanopore -o ~/output_mop/mRNA/isoquant
 ```
 
 ## Discover isoforms with Isoquant
 
 ```bash 
-isoquant.py --reference ~/Share/references/chr19.fa --fastq ~/Share/data/mouse/output/dorado_fast/fastq_files/pod5---bc_1.fq.gz --data_type nanopore -o isoquant_discovery_test
+isoquant --reference ~/references/chr19.fa --fastq ~/output_mop/mRNA/fastq/pod5.fq.gz --data_type nanopore -o isoquant_discovery_test
 ```
 
 

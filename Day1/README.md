@@ -106,12 +106,12 @@ cd ~/master_of_pores/mop_preprocess
 Edit the  `params.yaml` file
 
 ```bash
-Data: ../../mouse/CTR/CTR.pod5
-Reference: ../../references/chr19.fa
-Annotation: ../../references/chr19_annotation.gtf
+Data: /home/[your_username]/data/mouse/CTR/CTR.pod5
+Reference: /home/[your_username]/references/chr19.fa
+Annotation: /home/[your_username]/references/chr19_annotation.gtf
 Ref_type : genome
 Counting: htseq
-Output: ../../output_mop/mRNA_CTR_m6A
+Output: /home/[your_username]/output_mop/mRNA_CTR_m6A
 dorado-mod: "hac,m6A_DRACH"
 ```
 Run the pipeline!

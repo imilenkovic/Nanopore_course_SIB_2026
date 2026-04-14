@@ -1,5 +1,5 @@
 
-#  Master of Pores – Day 1 Setup & Exploration
+#  Master of Pores – Day 1 Demultiplexing, Basecalling and Mapping
 
 This guide walks through the first steps of exploring **Master of Pores** and inspecting example nanopore input data.
 

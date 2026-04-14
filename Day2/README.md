@@ -5,18 +5,34 @@
 
 ## Hands-on V: Isoform analysis with Isoquant 
 
+Navigate to the alignment directory:
+
+```bash
+cd ~/output_mop/mRNA_CTR_m6A/alignment
+```
+
 For each bam file we can assign reads to knwon isoforms:
 
 ```bash
-isoquant --reference ~/references/chr19.fa --genedb ~/references/chr19_annotation.db --complete_genedb --bam ~/output_mop/mRNA/alignment/pod5_s.bam --data_type nanopore -o ~/output_mop/mRNA/isoquant
+isoquant --reference ~/references/chr19.fa --genedb ~/references/chr19_annotation.gtf --complete_genedb --bam CTR_s.bam --data_type nanopore -o ../isoquant_CTR
 ```
 
 or discover isoforms:
 
 ```bash 
-isoquant --reference ~/references/chr19.fa --fastq ~/output_mop/mRNA/fastq/pod5.fq.gz --data_type nanopore -o isoquant_discovery_test
+isoquant --reference ~/references/chr19.fa --bam CTR_s.bam --data_type nanopore -o ../isoquant_discovery_CTR
 ```
 
+Explore the output folder: 
+
+```bash 
+ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT
+ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_discovery_CTR/OUT
+```
+
+You can download the new annotation file (.gtf) and load it in IGV.
+
+Now, do the same with the KO file :) 
 
 ## Hands-on VI: poly(A)-tail estimation with Dorado
 

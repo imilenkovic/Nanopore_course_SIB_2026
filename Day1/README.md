@@ -100,31 +100,33 @@ Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_file_name
 
 
 
-##  Basecall your mouse pod5 files with Dorado 
+##  Basecall your mouse pod5 files with Dorado m6A DRACH
 
 Navigate to the pre-processing directory:
 
 ```bash
-cd ~/MOP4_copied/mop_preprocess
+cd ~/master_of_pores/mop_preprocess
 ```
 
 Edit the  `params.yaml` file
 
-Data: Share/data/mouse/pod5/mouse_mRNA.pod5
-Reference: Share/references/chr19.fa
-Annotation: Share/references/gencode.vM38.annotation.gtf
+```bash
+Data: ../../mouse/CTR/CTR.pod5
+Reference: ../../references/chr19.fa
+Annotation: ../../references/chr19_annotation.gtf
 Ref_type : genome
 Counting: htseq
-
-Output: ./mouse_test_data
-
-seqtagger: "-k b04_RNA004"
-
+Output: ../../output_mop/mRNA_CTR_m6A
+dorado-mod: "hac,m6A_DRACH"
+```
 Run the pipeline!
 
 ```bash
-nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > demultiplexing.log
+nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_mRNA_CTR_m6A.txt
 ```
+
+Now, do the same with the KO file :) 
+
 
 ##  Basecall your yeast pod5 files with Dorado 
 

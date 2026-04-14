@@ -93,14 +93,7 @@ Epinano_Variants.py [-h] -b BAM -r REFERENCE -c 1 -o output_file_name
 ```
 
 
-
-
-
-
-
-
-
-##  Basecall your mouse pod5 files with Dorado m6A DRACH
+##  Hands-on III - Basecall your mouse pod5 files with Dorado m6A DRACH
 
 Navigate to the pre-processing directory:
 

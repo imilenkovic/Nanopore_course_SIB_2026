@@ -65,6 +65,17 @@ cd ~/master_of_pores/mop_preprocess
 
 Edit the  `params.yaml` file
 
+```bash
+pod5: /home/[your_username]/data/yeast/pod5/yeast_subset.pod5
+basecalling: "dorado"
+demultiplexing: "seqtagger"
+reference: /home/[your_username]/references/yeast_rRNA_ref.fa
+ref_type : transcriptome
+output: /home/[your_username]/output_mop/yeast_dorado_fast
+dorado: "fast"
+```
+
+
 Run the pipeline! (make sure you are in ~/master_of_pores/mop_preprocess)
 
 ```bash
@@ -106,12 +117,13 @@ cd ~/master_of_pores/mop_preprocess
 Edit the  `params.yaml` file
 
 ```bash
-Data: /home/[your_username]/data/mouse/CTR/CTR.pod5
-Reference: /home/[your_username]/references/chr19.fa
-Annotation: /home/[your_username]/references/chr19_annotation.gtf
-Ref_type : genome
-Counting: htseq
-Output: /home/[your_username]/output_mop/mRNA_CTR_m6A
+pod5: /home/[your_username]/data/mouse/CTR/CTR.pod5
+basecalling: "dorado-mod"
+reference: /home/[your_username]/references/chr19.fa
+annotation: /home/[your_username]/references/chr19_annotation.gtf
+ref_type : genome
+counting: htseq
+output: /home/[your_username]/output_mop/mRNA_CTR_m6A
 dorado-mod: "hac,m6A_DRACH"
 ```
 Run the pipeline!

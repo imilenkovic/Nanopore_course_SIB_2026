@@ -36,7 +36,7 @@ source .bashrc
 Navigate to the input directory:
 
 ```bash
-cd ~/Share/data/yeast/pod5
+cd ~/data/yeast/pod5
 
 ```
 
@@ -63,7 +63,7 @@ cd ~/master_of_pores/mop_preprocess
 
 Edit the  `params.yaml` file
 
-Run the pipeline!
+Run the pipeline! (make sure you are in ~/master_of_pores/mop_preprocess)
 
 ```bash
 nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > output.log

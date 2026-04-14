@@ -207,7 +207,7 @@ Run the pipeline!
 
 ## Assignment 1
 
-In ```/home/[your_username]/data/bacteria/pod5``` you will find raw sequencing data done on bacterial rRNA samples (E. coli).
+In ```/home/[your_username]/data/bacteria/pod5``` you will find raw sequencing data from bacterial rRNA samples (E. coli).
 
 The run contains 12 barcodes.
 
@@ -219,19 +219,19 @@ Find which modifications are missing in each of these KO strains.
 
 ## Assignment 2
 
-In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
+In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data from yeast rRNA samples (S. cerevisiae).
 
 Use a modification-aware basecaller to predict pseU sites in 18S and 25S rRNA. Investigate how well the predictions match the ground truth (known modifications). Use bc19 for the analysis.
 
 ## Assignment 3
 
-In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
+In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data from yeast rRNA samples (S. cerevisiae).
 
 Bc19 is the WT sample. Find which modifications are missing in barcodes 13, 14 and 15.
 
 ## Assignment 4
 
-In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data done on yeast rRNA samples (S. cerevisiae).
+In ```/home/[your_username]/data/yeast/pod5``` you will find raw sequencing data from yeast rRNA samples (S. cerevisiae).
 
 Bc19 is the WT sample. Find which modifications are missing in barcodes 17, 21, 22 and 23.
 

@@ -120,6 +120,12 @@ nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profi
 
 Now, do the same with the KO file :) 
 
+##  Hands-on IV - Extract m6A information from the bam files with modkit
+
+```bash
+```
+
+
 
 ##  Basecall your yeast pod5 files with Dorado 
 

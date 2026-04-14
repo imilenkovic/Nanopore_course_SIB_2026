@@ -46,7 +46,7 @@ nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profi
 Inspect the bam file:
 
 ```
-samtools view pod5---bc_19_s.bam | less
+samtools view pod5_s.bam | awk '/pt:i:/ { for (i=1; i<=NF; i++) if ($i ~ /pt:i:/) matched=$i; print $1, $2, $3, $4, matched; }' | less
 ```
 
 

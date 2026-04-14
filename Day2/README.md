@@ -30,6 +30,7 @@ ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT
 less ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT/OUT.read_assignments.tsv.gz
 
 ls -l ~/output_mop/mRNA_CTR_m6A/isoquant_discovery_CTR/OUT
+less ~/output_mop/mRNA_CTR_m6A/isoquant_discovery_CTR/OUT/OUT.transcript_models.gtf
 ```
 
 You can download the new annotation file (.gtf) and load it in IGV.

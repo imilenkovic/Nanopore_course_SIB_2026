@@ -86,7 +86,9 @@ Extract modification probability per position per read with Modkit
 
 ```bash
 modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
-``` 
+```
+The ```mod_qual``` column will contain the modification probability for each position in each read.
+
 
 Now, do the same with the KO file :) 
 

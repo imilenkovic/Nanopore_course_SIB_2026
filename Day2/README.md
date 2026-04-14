@@ -159,25 +159,10 @@ Run the pipeline!
  nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
 ```
 
-
-
-
-
-
-
-
-
-## Extract modification frequency per position with Modkit
+Extract modification probability per position per read with Modkit
 
 ```bash
-modkit pileup Share/data/mouse/output/dorado_m6A_drach/mouse_drach_trial/alignment/pod5---bc_1_s.bam modkit/CTR_m6A_pileup.bed --log-filepath modkit/CTR_m6A_pileup.log
-```
-
-
-## Extract modification frequency per read with Modkit
-
-```bash
-modkit extract full Share/data/mouse/output/dorado_m6A_drach/mouse_drach_trial/alignment/pod5---bc_1_s.bam --num-reads 1000 test_modkit_full.txt
+modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
 ``` 
 
 

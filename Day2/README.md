@@ -1,5 +1,5 @@
 
-#  Master of Pores – Day 2 Principles of single molecule resolution: polyA tail, isoform usage, per read modification
+#  Day 2 - Principles of single molecule resolution: polyA tail, isoform usage, per read modification
 
 
 

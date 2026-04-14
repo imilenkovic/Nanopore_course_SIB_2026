@@ -3,7 +3,7 @@
 
 
 
-## Predict isoform usage with Isoquant 
+## Hands-on V: Isoform analysis with Isoquant 
 
 For each bam file we can assign reads to knwon isoforms:
 
@@ -11,21 +11,19 @@ For each bam file we can assign reads to knwon isoforms:
 isoquant --reference ~/references/chr19.fa --genedb ~/references/chr19_annotation.db --complete_genedb --bam ~/output_mop/mRNA/alignment/pod5_s.bam --data_type nanopore -o ~/output_mop/mRNA/isoquant
 ```
 
-## Discover isoforms with Isoquant
+or discover isoforms:
 
 ```bash 
 isoquant --reference ~/references/chr19.fa --fastq ~/output_mop/mRNA/fastq/pod5.fq.gz --data_type nanopore -o isoquant_discovery_test
 ```
 
 
-
-
-## basecall modifications with estimating the poly(A)-tail
+## Hands-on VI: poly(A)-tail estimation with Dorado
 
 Navigate to the pre-processing directory:
 
 ```bash
-cd ~/MOP4_copied/mop_preprocess
+cd master_of_pores/mop_preprocess
 ```
 
 Edit the  `params.yaml` file:
@@ -36,7 +34,7 @@ basecalling: "dorado-mod"
 ```
 
 ```
-dorado-mod: "hac,pseU --estimate-poly-a"
+dorado-mod: "hac,m6A_DRACH --estimate-poly-a"
 ```
 
 ```
@@ -48,6 +46,22 @@ Inspect the bam file:
 ```
 samtools view pod5_s.bam | awk '/pt:i:/ { for (i=1; i<=NF; i++) if ($i ~ /pt:i:/) matched=$i; print $1, $2, $3, $4, matched; }' | less
 ```
+
+## Hands-on VII: per read modification information
+
+Navigate to the alignment directory:
+
+```bash
+cd ~/output_mop/mRNA_CTR_m6A/alignment
+```
+
+Extract modification probability per position per read with Modkit
+
+```bash
+modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
+``` 
+
+Now, do the same with the KO file :) 
 
 
 ## analyze modifications through basecalling errors 
@@ -159,11 +173,6 @@ Run the pipeline!
  nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
 ```
 
-Extract modification probability per position per read with Modkit
-
-```bash
-modkit extract full CTR_s.bam --num-reads 1000 ../modkit/CTR_modkit_full.txt
-``` 
 
 
 

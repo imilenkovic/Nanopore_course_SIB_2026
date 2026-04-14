@@ -60,6 +60,11 @@ dorado-mod: "hac,m6A_DRACH --estimate-poly-a"
 nextflow run mop_preprocess.nf -params-file params.yaml -with-singularity -profile local -bg > log_file.log
 ```
 
+Navigate to the alignment directory:
+
+```bash
+cd ~/output_mop/mRNA_CTR_polyA/alignment
+```
 Inspect the bam file:
 
 ```

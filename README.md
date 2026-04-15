@@ -1,5 +1,7 @@
-# Nanopore_intro_to_RNA
-Introduction to dRNA sequencing and correponding analyses
+# SIB course - Introduction to Nanopore direct RNA sequencing data analysis
+16 - 17 April 2026 
+Lausanne, Amphimax
+Instructors: Ivan Milenković, PhD & Sonia Cruciani, PhD
 
 
 ## Course Schedule 

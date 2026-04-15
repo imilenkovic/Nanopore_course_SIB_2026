@@ -15,8 +15,7 @@ Note: Except the starting time, this time schedule is indicative and the time po
 |----------------|-------------------------------------------------------------------------------------------------------|
 | 09:00–10:00   | **Introduction**                                                                            |
 | 10:00–10:30   | **Break**                                                                                   |
-| 10:30–11:00   | **Demultiplexing, basecalling, mapping**                                                    |
-| 11:00–12:00   | **Hands-on: Server login, basecalling, mapping**                                            |
+| 10:30–12:00   | **Demultiplexing, basecalling, mapping**                                                    |
 | 12:00–13:00   | **Lunch Break**                                                                             |
 | 13:00–14:30   | **Indirect RNA modification mapping in ribosomal RNA**                                      |
 | 14:30–15:00   | **Break**                                                                                   |

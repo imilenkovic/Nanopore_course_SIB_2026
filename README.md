@@ -1,7 +1,7 @@
 # Introduction to Nanopore direct RNA sequencing data analysis
 16 - 17 April 2026 
 
-Lausanne, Amphimax
+Lausanne, Amphimax room 414 
 
 Instructors: Ivan Milenković, PhD & Sonia Cruciani, PhD
 

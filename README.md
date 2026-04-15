@@ -27,6 +27,6 @@ Note: Except the starting time, this time schedule is indicative and the time po
 | 09:30–10:30   | **Principles of single molecule resolution: isoform usage**                                |
 | 10:30–11:00   | **Break**                                                                                   |
 | 11:00–12:00   | **Principles of single molecule resolution: PolyA tail 
-                  estimation and per-read modification probability** | 
+                 \ estimation and per-read modification probability** | 
 | 12:00–13:00   | **Lunch Break**                                                                             |
 | 13:00–17:00   | **Assignments and Presentations**                                                           | 

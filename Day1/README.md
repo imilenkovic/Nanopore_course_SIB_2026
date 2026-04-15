@@ -99,10 +99,18 @@ cat .nextflow.pid
 kill 1234
 ```
 
-##  Hands-on II - running epinano on the MOP output
+##  Hands-on II - Indirect RNA modification mapping in rRNA
+
+### Run Epinano on the MoP output
 
 ```
 epinano_variants -b BAM -r REFERENCE -c 1 -o output_folder_name
+```
+
+### Compare two epinano output files
+
+```
+Rscript scatterplot_script.R file_1.csv file_2.csv output.pdf
 ```
 
 

@@ -8,7 +8,7 @@ Note: Except the starting time, this time schedule is indicative and the time po
 ### Day 1
 
 | Time          | Session                                                                                     |
-|----------------|---------------------------------------------------------------------------------------------|
+|----------------|--------------------------------------------------------------------------------------------------|
 | 09:00–10:00   | **Introduction**                                                                            |
 | 10:00–10:30   | **Break**                                                                                   |
 | 10:30–11:00   | **Demultiplexing, basecalling, mapping**                                                    |
@@ -22,10 +22,10 @@ Note: Except the starting time, this time schedule is indicative and the time po
 ### Day 2
 
 | Time          | Session                                                                                     |
-|----------------|---------------------------------------------------------------------------------------------|
+|----------------|--------------------------------------------------------------------------------------------------|
 | 09:00–09:30   | **Recap of Day 1**                                                                          | 
-| 09:30–10:30   | **Principles of single molecule resolution**                                                |
+| 09:30–10:30   | **Principles of single molecule resolution: isoform usage**                                |
 | 10:30–11:00   | **Break**                                                                                   |
-| 11:00–12:00   | **PolyA tail estimation and per-read modification probability**                              | 
+| 11:00–12:00   | **Principles of single molecule resolution: PolyA tail estimation and per-read modification probability** | 
 | 12:00–13:00   | **Lunch Break**                                                                             |
 | 13:00–17:00   | **Assignments and Presentations**                                                           | 

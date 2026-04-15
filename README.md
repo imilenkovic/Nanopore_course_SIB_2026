@@ -2,12 +2,10 @@
 Introduction to dRNA sequencing and correponding analyses
 
 
-# Course Schedule 
+## Course Schedule 
 Note: Except the starting time, this time schedule is indicative and the time points might deviate.
 
-# Workshop Timetable
-
-## Day 1
+### Day 1
 
 | Time          | Session                                                                                     |
 |----------------|---------------------------------------------------------------------------------------------|
@@ -22,7 +20,7 @@ Note: Except the starting time, this time schedule is indicative and the time po
 
 ---
 
-## Day 2
+### Day 2
 
 | Time          | Session                                                                                     | Details |
 |----------------|---------------------------------------------------------------------------------------------|----------|

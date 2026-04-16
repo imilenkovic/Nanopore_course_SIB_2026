@@ -43,7 +43,7 @@ cd ~/data/yeast/pod5
 List contents of a `.pod5` file:
 
 ```bash
- pod5 inspect reads | head
+ pod5 inspect reads subset_yeast.pod5 | head
 ```
 
 Count the total number of groups/datasets:

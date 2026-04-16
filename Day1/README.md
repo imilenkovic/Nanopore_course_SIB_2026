@@ -132,6 +132,7 @@ Edit the  `params.yaml` file
 ```bash
 pod5: /home/[your_username]/data/mouse/CTR/CTR.pod5
 basecalling: "dorado-mod"
+demultiplexing: "NO"
 reference: /home/[your_username]/references/chr19.fa
 annotation: /home/[your_username]/references/chr19_annotation.gtf
 ref_type : genome

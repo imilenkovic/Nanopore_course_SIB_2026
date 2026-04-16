@@ -66,7 +66,7 @@ cd ~/master_of_pores/mop_preprocess
 Edit the  `params.yaml` file
 
 ```bash
-pod5: /home/[your_username]/data/yeast/pod5/yeast_subset_10000.pod5
+pod5: /home/[your_username]/data/yeast/pod5/yeast_subset.pod5
 basecalling: "dorado"
 demultiplexing: "seqtagger"
 reference: /home/[your_username]/references/yeast_rRNA_ref.fa

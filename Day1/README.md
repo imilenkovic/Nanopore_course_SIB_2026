@@ -114,6 +114,11 @@ Rscript scatterplot_script.R file_1.csv file_2.csv output.pdf
 ```
 
 
+### Compare fast vs hac
+
+Now do this on the bam file made with the hac dorado model, and compare bc_19 (fast) vs bc_19 (hac)
+
+
 ##  Hands-on III - Basecall your mouse pod5 files with Dorado m6A DRACH
 
 Navigate to the pre-processing directory:

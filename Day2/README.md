@@ -92,6 +92,11 @@ The ```mod_qual``` column will contain the modification probability for each pos
 Now, do the same with the KO file :) 
 
 
+## (Advanced) Hands-on VIII: per isoform analysis?
+
+Use the isoquant read assignments to split the bam by different isoforms of Tmem134 (exon 6 skipped or included). You can use IGV for better visualization.
+
+
 # Group assignments
 
 ## Assignment 1

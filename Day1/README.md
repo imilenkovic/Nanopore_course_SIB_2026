@@ -164,6 +164,16 @@ modkit pileup CTR_s.bam ../modkit/CTR_m6A_pileup.bed --log-filepath ../modkit/CT
 
 Now, do the same with the KO file :) 
 
+
+You might want to filter these .bed files to only keep meaningful modification predictions; you can tweak the parameters of how you want to perform the filtering, but here is an example:
+```
+for i in ../*_pileup.bed; do
+    awk '$5 >= 200 && $4 == "17802" { print $1"\t"$2"\t"$3"\t"$11 }' $i | \
+    sort -k4,4nr | \
+    awk '$4 > 5' > $(basename $i _pileup.bed).bedgraph
+done
+```
+
 ## Extra: Some useful commands to explore the bam files with samtools 
 
 ```bash

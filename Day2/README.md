@@ -92,7 +92,7 @@ The ```mod_qual``` column will contain the modification probability for each pos
 Now, do the same with the KO file :) 
 
 
-## (Advanced) Hands-on VIII: per isoform analysis?
+## (Advanced) Hands-on VIII: per isoform analysis
 
 Use the isoquant read assignments to split the bam by different isoforms of Tmem134 (exon 6 skipped or included). You can use IGV for better visualization.
 
@@ -106,8 +106,29 @@ grep Rhod OUT.extended_annotation.gtf
 extract the read ids and the isoform ids 
 
 ```
-zcat OUT.read_assignments.tsv.gz | grep ENSMUSG00000041845.11 | cut -f 1,4
+zcat OUT.read_assignments.tsv.gz | grep ENSMUSG00000041845.11 | cut -f 1,4 > reads_isoforms.txt
 ```
+
+how many isoforms are there? which ones? use grep to split the reads by isoform id. 
+
+```
+zcat OUT.read_assignments.tsv.gz | grep ENSMUSG00000041845.11 | cut -f 4 | sort -u
+zcat OUT.read_assignments.tsv.gz | grep ENSMUSG00000041845.11 |  grep ENSMUST00000048197.9 | cut -f 1 > isoform1_readids.txt
+```
+
+do the same for the other isoforms.
+
+Now, use these files to extract the reads from the bam file and make a minibam for each isoform. 
+
+```
+cd ~/output_mop/mRNA_CTR_m6A/alignment/
+samtools view -H CTR_s.bam > isoform1.sam
+samtools view CTR_s.bam | grep -f ../isoquant_CTR/OUT/isoform1_readids.txt >> isoform1.sam
+samtools sort isoform1.sam  | samtools view -Sb -o isoform1.bam
+samtools index isoform1.bam
+```
+
+Repeat for the other isoforms. Now you can visualize the split bams in IGV, run modkit separately on each bam to get per isoform modification frequency, study per isoform polyA tail length... etc
 
 
 # Group assignments

@@ -139,6 +139,7 @@ ref_type : genome
 counting: htseq
 output: /home/[your_username]/output_mop/mRNA_CTR_m6A
 dorado-mod: "hac,m6A_DRACH"
+minimap2: "-x splice -y -uf -k14"
 ```
 Run the pipeline!
 

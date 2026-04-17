@@ -55,6 +55,7 @@ ref_type : genome
 counting: htseq
 output: ../../output_mop/mRNA_CTR_polyA
 dorado-mod: "hac,m6A_DRACH --estimate-poly-a"
+minimap2: "-x splice -y -uf -k14"
 ```
 Run the pipeline!
 

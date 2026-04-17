@@ -96,6 +96,19 @@ Now, do the same with the KO file :)
 
 Use the isoquant read assignments to split the bam by different isoforms of Tmem134 (exon 6 skipped or included). You can use IGV for better visualization.
 
+For example, let's focus on Rhod gene. We find the ensembl gene ID
+
+```
+cd ~/output_mop/mRNA_CTR_m6A/isoquant_CTR/OUT
+grep Rhod OUT.extended_annotation.gtf
+```
+
+extract the read ids and the isoform ids 
+
+```
+zcat OUT.read_assignments.tsv.gz | grep ENSMUSG00000041845.11 | cut -f 1,4
+```
+
 
 # Group assignments
 
